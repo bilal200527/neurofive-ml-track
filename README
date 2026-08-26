@@ -1,0 +1,114 @@
+# Task 03 — Model Evaluation and Hyperparameter Tuning
+
+## 📌 Overview
+
+In this task, I revisited my Titanic classification model and focused on evaluating and improving its performance using multiple classification metrics and hyperparameter tuning.
+
+Instead of relying only on accuracy, I evaluated the model using **Precision, Recall, and F1-score**. I then used **GridSearchCV** to systematically search for better hyperparameter combinations.
+
+## 🎯 Objectives
+
+* Calculate Precision, Recall, and F1-score
+* Understand why accuracy can be misleading for imbalanced datasets
+* Tune multiple model hyperparameters using GridSearchCV
+* Compare the original and tuned models
+* Analyze whether hyperparameter tuning improved model performance
+
+## 📊 Dataset
+
+**Dataset:** Titanic Dataset
+
+**Target variable:** `Survived`
+
+* `0` = Did not survive
+* `1` = Survived
+
+## 🔑 Features Used
+
+* `Pclass`
+* `Sex`
+* `Age`
+* `Fare`
+
+Missing Age values were replaced with the median, and the Sex feature was converted into numerical values.
+
+## 🤖 Model
+
+The classification model used was **Logistic Regression**.
+
+The dataset was divided into:
+
+* 80% training data
+* 20% testing data
+
+A `StandardScaler` was used with Logistic Regression through a Scikit-learn Pipeline.
+
+## 📈 Evaluation Metrics
+
+The model was evaluated using:
+
+* Accuracy
+* Precision
+* Recall
+* F1-Score
+
+Accuracy alone can be misleading when a dataset is imbalanced because a model can achieve high accuracy by mostly predicting the majority class. Precision, Recall, and F1-score provide a better understanding of how well the model identifies each class.
+
+## 🔧 Hyperparameter Tuning
+
+I used **GridSearchCV** with 5-fold cross-validation to tune two Logistic Regression hyperparameters:
+
+* `C`
+* `solver`
+
+The model was optimized using **F1-score**.
+
+### Best Parameters
+
+```text
+C = 0.1
+solver = lbfgs
+```
+
+Best cross-validation F1-score:
+
+```text
+0.7228
+```
+
+## 📊 Before vs After
+
+| Metric    | Original Model | Tuned Model | Improvement |
+| --------- | -------------: | ----------: | ----------: |
+| Accuracy  |         0.7877 |      0.7933 |     +0.0056 |
+| Precision |         0.7460 |      0.7500 |     +0.0040 |
+| Recall    |         0.6812 |      0.6957 |     +0.0145 |
+| F1-Score  |         0.7121 |      0.7218 |     +0.0097 |
+
+## 🔍 Results Analysis
+
+Hyperparameter tuning produced a small but consistent improvement across all four evaluation metrics.
+
+Accuracy increased from **78.77% to 79.33%**, while Precision increased from **74.60% to 75.00%**. Recall showed the largest improvement, increasing from **68.12% to 69.57%**, meaning the tuned model identified a larger proportion of actual survivors.
+
+The F1-score increased from **0.7121 to 0.7218**, showing a better balance between Precision and Recall. Overall, GridSearchCV successfully improved the Logistic Regression model, although the improvement was relatively small.
+
+## 🚀 Key Learning
+
+This task demonstrated that model evaluation should not rely on accuracy alone. Precision, Recall, and F1-score provide additional information about classification performance, while GridSearchCV provides a systematic way to search for better hyperparameter settings instead of manually guessing values.
+
+## 📁 Project Files
+
+```text
+Task-03-Model-Tuning/
+│
+├── Titanic_Model_Tuning.ipynb
+├── README.md
+└── results.png
+```
+
+## 👨‍💻 Author
+
+**Muhammad Bilal Hafeez**
+
+Machine Learning Track — Neurofive Solutions
