@@ -1,1 +1,258 @@
+# ♻️ EcoVision — AI-Powered Waste Classification & Recycling Assistant
+
+## 🌐 Live Demo
+
+🚀 **Live Application:** YOUR_STREAMLIT_URL
+
+💻 **GitHub Repository:** YOUR_GITHUB_URL
+
+---
+
+## 📌 Problem Statement
+
+Improper waste segregation is a major challenge for effective recycling. People often have difficulty identifying whether an item belongs to categories such as plastic, paper, glass, metal, cardboard, or general trash.
+
+EcoVision is an AI-powered computer vision application that automatically classifies waste images and provides a simple recycling recommendation.
+
+The goal of the project is to demonstrate how Machine Learning and computer vision can be applied to support better waste segregation and recycling awareness.
+
+---
+
+## 🎯 Project Objective
+
+The objective of EcoVision is to:
+
+* Automatically classify waste from an image
+* Identify the waste category
+* Display the model's confidence
+* Provide a recycling recommendation
+* Make the trained model accessible through a simple web application
+
+---
+
+## 📊 Dataset
+
+The project uses a labeled waste image dataset containing six categories:
+
+* Cardboard
+* Glass
+* Metal
+* Paper
+* Plastic
+* Trash
+
+The images were organized into class-specific folders and processed for image classification.
+
+---
+
+## 🔄 Approach
+
+The project follows a complete Machine Learning workflow.
+
+### 1. Data Collection
+
+A publicly available waste image dataset was used for training and evaluation.
+
+### 2. Data Exploration
+
+The dataset was analyzed to:
+
+* Count images per category
+* Check class distribution
+* Visualize sample images
+* Understand the characteristics of the dataset
+
+### 3. Image Preprocessing
+
+Images were resized to `224 × 224` pixels.
+
+Data augmentation techniques were applied to improve model generalization.
+
+### 4. Model Development
+
+Two different models were trained and evaluated:
+
+* Custom CNN
+* MobileNetV2 Transfer Learning
+
+### 5. Model Evaluation
+
+Models were compared using validation accuracy and classification performance.
+
+### 6. Model Selection
+
+The model with the strongest validation performance was selected as the final model.
+
+### 7. Deployment
+
+The final model was integrated into a Streamlit web application and deployed publicly.
+
+---
+
+## 🤖 Models
+
+### Custom CNN
+
+A convolutional neural network was developed using:
+
+* Convolutional layers
+* Max pooling
+* Dense layers
+* Dropout
+* Softmax output
+
+### MobileNetV2
+
+MobileNetV2 with ImageNet pretrained weights was also evaluated using transfer learning.
+
+The pretrained feature extractor was combined with a custom classification layer for the six waste categories.
+
+---
+
+## 📈 Results
+
+The final model was selected based on validation performance.
+
+| Model       | Validation Accuracy |
+| ----------- | ------------------: |
+| Custom CNN  |          ADD_RESULT |
+| MobileNetV2 |          ADD_RESULT |
+
+### Best Model
+
+**ADD_BEST_MODEL**
+
+### Best Validation Accuracy
+
+**ADD_BEST_ACCURACY**
+
+---
+
+## 🌐 Web Application
+
+The Streamlit application allows users to:
+
+1. Upload a waste image
+2. Preview the image
+3. Classify the waste
+4. View the predicted category
+5. View prediction confidence
+6. Receive a recycling recommendation
+
+---
+
+## 🛠️ Technologies Used
+
+* Python
+* TensorFlow
+* Keras
+* NumPy
+* Pandas
+* Scikit-learn
+* Matplotlib
+* Seaborn
+* Pillow
+* Streamlit
+* GitHub
+
+---
+
+## 📂 Project Structure
+
+```text
+ecovision-waste-classifier/
+│
+├── app.py
+├── best_model.keras
+├── requirements.txt
+├── README.md
+├── CASE_STUDY.md
+│
+├── notebooks/
+│   └── EcoVision_Training.ipynb
+│
+└── screenshots/
+```
+
+---
+
+## 💻 Run Locally
+
+### Clone the repository
+
+```bash
+git clone YOUR_GITHUB_URL
+```
+
+### Navigate to the project
+
+```bash
+cd ecovision-waste-classifier
+```
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run the application
+
+```bash
+streamlit run app.py
+```
+
+The application will open in your browser.
+
+---
+
+## 🚀 Deployment
+
+The application is deployed using Streamlit Community Cloud.
+
+### Live Application
+
+**YOUR_STREAMLIT_URL**
+
+---
+
+## 💡 Real-World Value
+
+EcoVision demonstrates how computer vision can support waste segregation and recycling awareness.
+
+A system like this could potentially be integrated into:
+
+* Smart recycling bins
+* Waste management systems
+* Educational recycling applications
+* Smart-city initiatives
+* Recycling assistance tools
+
+The current project is a prototype and should be considered a decision-support tool rather than a replacement for official waste-management guidelines.
+
+---
+
+## 🎓 Learning Outcomes
+
+Through this project, I learned how to:
+
+* Work with image datasets
+* Perform image preprocessing
+* Apply data augmentation
+* Build CNN models
+* Use transfer learning with MobileNetV2
+* Compare multiple ML models
+* Evaluate classification performance
+* Save and load trained models
+* Build a Streamlit application
+* Deploy an AI application
+* Present an ML project as an end-to-end product
+
+---
+
+## 👨‍💻 Author
+
+**Muhammad Bilal Hafeez**
+
+Machine Learning Track — Neurofive Solutions
 
