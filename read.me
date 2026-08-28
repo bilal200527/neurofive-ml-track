@@ -1,0 +1,320 @@
+# 🚢 Titanic Survival Prediction — Streamlit Web App
+
+An interactive Machine Learning web application that predicts whether a Titanic passenger is likely to survive based on passenger information.
+
+This project is part of my **Neurofive Solutions Machine Learning Track** and represents the deployment stage of my previous Titanic Machine Learning tasks.
+
+## 🌐 Live Application
+
+🚀 **Live Demo:** `YOUR_STREAMLIT_APP_URL`
+
+💻 **GitHub Repository:** `YOUR_GITHUB_REPOSITORY_URL`
+
+---
+
+## 📌 Project Overview
+
+In my previous Titanic Machine Learning tasks, I performed:
+
+* Exploratory Data Analysis (EDA)
+* Data preprocessing
+* Missing-value handling
+* Feature engineering
+* Data visualization
+* Model training
+* Model evaluation
+* Classification using Logistic Regression
+
+For this task, I took the trained Machine Learning model and converted it into an interactive web application using **Streamlit**.
+
+The trained model was saved using **Joblib** and integrated into the Streamlit application.
+
+---
+
+## 🎯 Objective
+
+The objective of this project is to demonstrate how a Machine Learning model can be moved from a Jupyter/Google Colab notebook into a real-world, publicly accessible web application.
+
+Users can enter passenger information and receive a prediction about whether the passenger is likely to survive.
+
+---
+
+## 🤖 Machine Learning Model
+
+The application uses a **Logistic Regression** classification model developed during the previous Titanic ML tasks.
+
+### Target Variable
+
+```text
+Survived
+```
+
+| Value | Meaning         |
+| ----- | --------------- |
+| `0`   | Did not survive |
+| `1`   | Survived        |
+
+---
+
+## 📊 Features Used
+
+The model uses the following passenger features:
+
+* `Pclass` — Passenger class
+* `Sex` — Passenger gender
+* `Age` — Passenger age
+* `SibSp` — Number of siblings/spouses aboard
+* `Parch` — Number of parents/children aboard
+* `Fare` — Passenger fare
+* `Embarked` — Port of embarkation
+* `FamilySize` — Total family size
+* `IsAlone` — Whether the passenger was travelling alone
+
+### Feature Engineering
+
+`FamilySize` was calculated as:
+
+```text
+FamilySize = SibSp + Parch + 1
+```
+
+`IsAlone` was calculated as:
+
+```text
+IsAlone = 1 if FamilySize == 1 else 0
+```
+
+---
+
+## 🔧 Data Preprocessing
+
+The Machine Learning pipeline performs preprocessing before making predictions.
+
+### Numerical Features
+
+Numerical features are processed using:
+
+* Median imputation for missing values
+* StandardScaler for feature scaling
+
+### Categorical Features
+
+Categorical features are processed using:
+
+* Most-frequent imputation
+* OneHotEncoder
+
+The preprocessing steps and Logistic Regression model are combined into a single Scikit-learn pipeline.
+
+The complete pipeline is saved using **Joblib**.
+
+---
+
+## 💾 Saved Model
+
+The trained model is saved as:
+
+```text
+titanic_model.pkl
+```
+
+The saved model is loaded by the Streamlit application whenever the app starts.
+
+---
+
+## 🌐 Streamlit Application
+
+The web application allows users to enter:
+
+```text
+Passenger Class
+Sex
+Age
+Siblings / Spouses
+Parents / Children
+Fare
+Port of Embarkation
+```
+
+After entering the information, the user clicks:
+
+```text
+🔮 Predict Survival
+```
+
+The application then displays:
+
+* Survival prediction
+* Estimated survival probability
+
+---
+
+## 🖥️ Application Workflow
+
+```text
+User Input
+    ↓
+Passenger Information
+    ↓
+Feature Engineering
+    ↓
+Saved ML Pipeline
+    ↓
+Preprocessing
+    ↓
+Logistic Regression
+    ↓
+Prediction
+    ↓
+Survival Probability
+```
+
+---
+
+## 🛠️ Technologies Used
+
+* **Python**
+* **Pandas**
+* **NumPy**
+* **Scikit-learn**
+* **Joblib**
+* **Streamlit**
+* **GitHub**
+
+---
+
+## 📂 Project Structure
+
+```text
+Task-Deployment/
+│
+├── app.py
+├── titanic_model.pkl
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 💻 Run the Application Locally
+
+### 1. Clone the repository
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+```
+
+### 2. Navigate to the project directory
+
+```bash
+cd Task-Deployment
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run Streamlit
+
+```bash
+streamlit run app.py
+```
+
+The application will open in your browser at:
+
+```text
+http://localhost:8501
+```
+
+---
+
+## 📦 Requirements
+
+The project uses the following Python libraries:
+
+```text
+streamlit
+pandas
+numpy
+scikit-learn
+joblib
+```
+
+These dependencies are listed in `requirements.txt`.
+
+---
+
+## 🚀 Deployment
+
+The application was deployed using **Streamlit Community Cloud**.
+
+### Live Application
+
+👉 **YOUR_STREAMLIT_APP_URL**
+
+The application is publicly accessible and can be used without running the Python code locally.
+
+---
+
+## 📸 Application Demo
+
+The deployed application provides an interactive interface for entering Titanic passenger information and generating a survival prediction.
+
+---
+
+## 🔄 Complete Machine Learning Workflow
+
+This project demonstrates the complete ML workflow:
+
+```text
+Titanic Dataset
+       ↓
+Exploratory Data Analysis
+       ↓
+Data Cleaning
+       ↓
+Feature Engineering
+       ↓
+Data Preprocessing
+       ↓
+Model Training
+       ↓
+Logistic Regression
+       ↓
+Model Evaluation
+       ↓
+Save Model Using Joblib
+       ↓
+Build Streamlit Application
+       ↓
+Deploy to Streamlit Cloud
+       ↓
+Live ML Web Application
+```
+
+---
+
+## 🎓 Learning Outcomes
+
+Through this project, I learned how to:
+
+* Save a trained Machine Learning model using Joblib
+* Build an interactive application using Streamlit
+* Load a trained model into a web application
+* Accept real-time user input
+* Generate predictions from a deployed model
+* Display prediction probabilities
+* Manage Python dependencies using `requirements.txt`
+* Deploy an ML application to the cloud
+* Connect Machine Learning development with real-world application deployment
+
+---
+
+## 👨‍💻 Author
+
+**Muhammad Bilal Hafeez**
+
+Machine Learning Track
+**Neurofive Solutions**
